@@ -2,6 +2,7 @@ import { useState } from "react";
 import { assets } from "../../assets/assets";
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { backendUrl } from "../../App";
 import "./Add.css";
 
 function Add(props) {
@@ -41,7 +42,7 @@ function Add(props) {
       image3 && formData.append("image3", image3);
       image4 && formData.append("image4", image4);
 
-      const response = await axios.post("http://localhost:4000/api/products/add", formData, {
+      const response = await axios.post(backendUrl + "/api/products/add", formData, {
         headers: {
           authorization: "Bearer " + token
         }

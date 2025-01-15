@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect } from "react";
 import { toast } from 'react-toastify';
 import { assets } from './../../assets/assets';
+import { backendUrl } from './../../App';
 
 function Others() {
 
@@ -13,7 +14,7 @@ function Others() {
   // Get All Orders
   const getAllOrders = async () => {
     try {
-      const response = await axios.post("http://localhost:4000/api/order/list", {},
+      const response = await axios.post(backendUrl + "/api/order/list", {},
         { headers: { authorization: "Bearer " + token } }
       );
       if (response.data.success) {

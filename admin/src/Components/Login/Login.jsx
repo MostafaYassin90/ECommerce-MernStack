@@ -4,7 +4,7 @@ import { z } from "zod";
 import axios from "axios";
 import "./Login.css";
 
-const backendUrl = "http://localhost:4000/api/users/admin";
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function Login(props) {
   const setToken = props.setToken;
