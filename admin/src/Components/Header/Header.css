@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 4%;
+  height: 75px;
+}
+
+.header .logo-img {
+  width: 120px;
+}
+
+.header .logout-btn {
+  width: 93px;
+  height: 38px;
+  border-radius: 20px;
+  background-color: #212529;
+  color: #fff;
+}

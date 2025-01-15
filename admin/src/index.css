@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active {
+  background-color: #b6b6b6;
+  border-color: #000;
+}
+
+body {
+  font-family: "Outfit", serif;
+}
+
+.app .content {
+  display: flex;
+  width: 100%;
+}
+
+.app .content .holder-routes {
+  width: 70%;
+  margin: 16px auto;
+}

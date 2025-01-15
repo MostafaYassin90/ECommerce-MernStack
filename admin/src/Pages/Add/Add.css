@@ -1,0 +1,144 @@
+.add {}
+
+.add form {}
+
+.add form .field-group {
+  margin-bottom: 20px;
+}
+
+.add form .upload-title {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+
+.add form .field-group .holder-uploads {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.add form .field-group .holder-uploads label img {
+  width: 80px;
+  height: 80px;
+  border: 3px dotted #0075ff;
+  cursor: pointer;
+}
+
+/* Control Group */
+
+.add form .control-group {}
+
+.add form .control-group label {
+  display: block;
+  font-weight: 500;
+  font-size: 17px;
+  transform: translate(3px, -3px);
+  width: 100%;
+}
+
+.add form .control-group input,
+.add form .control-group textarea {
+  display: block;
+  max-width: 500px;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 7px;
+  border: 1px solid #c2c2c2;
+  outline-color: #0096FF;
+}
+
+/* Holder Select */
+.add form .holder-select {
+  display: flex;
+  gap: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.add form .holder-select>div {
+  width: calc(100% / 3);
+}
+
+.add form .control-group select {
+  border-radius: 7px;
+  border: 1px solid #c2c2c2;
+  outline-color: #0096FF;
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .add form .holder-select {
+    flex-direction: column;
+  }
+
+  .add form .holder-select>div {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Product Sizes */
+.add .product-sizes {
+  margin-bottom: 20px;
+}
+
+.add .product-sizes .title {
+  margin: 3px 0 6px 0;
+  font-weight: 600;
+}
+
+.add .product-sizes .holder-sizes {
+  display: flex;
+  gap: 15px;
+}
+
+.add .product-sizes .holder-sizes>div p {
+  margin: 0;
+  background-color: #ddd;
+  padding: 4px 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.add .product-sizes .holder-sizes>div p.active {
+  background-color: #000;
+  color: #fff;
+}
+
+/* BestSeller */
+.add .holder-bestseller {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.add .holder-bestseller label {
+  font-weight: 500;
+}
+
+.add .holder-bestseller input {
+  width: 18px;
+  height: 18px;
+  display: block;
+  cursor: pointer;
+}
+
+/* Button Add */
+.add .add-btn {
+  display: block;
+  width: 25%;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: none;
+  height: 42px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 17px;
+}

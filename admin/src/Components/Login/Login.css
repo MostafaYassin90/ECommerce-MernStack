@@ -1,0 +1,87 @@
+.login {
+  height: 100vh;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.login .holder-form {
+  width: 55%;
+  background: #131313;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.login .holder-form .login-title {
+  color: #fff;
+  font-size: 23px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+
+.login .holder-form form {
+  width: 100%;
+}
+
+.login .holder-form form div {
+  margin-bottom: 30px;
+}
+
+.login .holder-form form div label {
+  display: block;
+  color: #fff;
+  font-weight: 500;
+  transform: translate(3px, 0px);
+  width: 100%;
+}
+
+.login .holder-form form div input {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 7px;
+  outline: none;
+  background-color: #fff1;
+  border: 2px solid transparent;
+  color: #fff;
+  font-size: 17px;
+}
+
+.login .holder-form form div input:focus {
+  border-bottom-color: #0096ff;
+}
+
+.login .holder-form form .submit-btn {
+  display: block;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border-radius: 20px;
+  width: 100%;
+  margin: 20px auto 0;
+  border: 2px solid #333;
+  padding: 8px 12px;
+  font-size: 18px;
+  height: 45px;
+  transition: 0.5s;
+}
+
+.login .holder-form form .submit-btn:hover {
+  background-color: #006988;
+}
+
+.login .submit-error {
+  margin-top: 20px;
+  width: 100%;
+  background: #fff1;
+  padding: 10px;
+  color: #f00;
+  text-align: center;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 17px;
+}

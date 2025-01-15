@@ -1,0 +1,33 @@
+
+
+const cartitems = {  aaaa: {S: 1, M: 1}, aaab: {L:1, XL :1}  }
+
+const function CartData() {
+
+const  { cartItems, products } = useContext(ShopContext);
+const [cartData, setCartData] = useState([]);
+const token = window.locaStorage.getItem("Token");
+
+ |image | title      |  quantity | action[delete]
+ |      | price size | 
+
+ const getCartData = () => {
+  let cartArr = [];
+  for (const items in cartItems) {
+    for (const item in cartItems[items]) {
+        let Product = products.find((product) => product._id === items);
+        if (Product) {
+            Product["size"] = item;
+            product["quantity"] = cartitems[items][item]
+            cartArr.push(product)
+        }
+    }
+  }
+  setCartData(cartArr)
+ } 
+
+ useEffect(() => {
+  getCartData()
+ , []})
+
+}
