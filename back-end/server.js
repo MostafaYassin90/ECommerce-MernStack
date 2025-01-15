@@ -11,7 +11,7 @@ import "dotenv/config";
 
 // App Config
 const app = express();
-const port = process.env.PORT || 4000;
+const port = "4000";
 
 // Connect DB
 connectDB();
@@ -26,6 +26,9 @@ app.use("/api/users", userRoute);
 app.use("/api/products", productRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
+app.use("/welcome", (req, res) => {
+  res.send("welcome");
+});
 
 // Running Server
 app.listen(port, () => {
