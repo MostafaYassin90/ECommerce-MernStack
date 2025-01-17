@@ -31,7 +31,7 @@ const PlaceOrder = () => {
     country: "",
     phone: ""
   });
-
+  console.log(method);
   // onChange Handler 
   const onChangeHandler = async (event) => {
     let name = event.target.name;
