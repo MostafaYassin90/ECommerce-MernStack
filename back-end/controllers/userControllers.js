@@ -2,6 +2,7 @@ import { z } from "zod";
 import UserModel from './../models/userModel.js';
 import bcrybt from "bcrypt";
 import jwt from "jsonwebtoken";
+import "dotenv/config";
 
 /* --------------------- Gnerate Token -------------------- */
 // Generate Token 

@@ -1,5 +1,5 @@
-
 import jwt from 'jsonwebtoken';
+import "dotenv/config";
 
 const userAuth = async (req, res, next) => {
 
