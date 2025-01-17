@@ -65,7 +65,7 @@ const PlaceOrder = () => {
 
     switch (method) {
       case "cod":
-        const response = await axios.post("http://localhost:4000/api/order/place", orderData,
+        const response = await axios.post(backendUrl + "/api/order/place", orderData,
           { headers: { authorization: "Bearer " + token } }
         );
         console.log(response);
