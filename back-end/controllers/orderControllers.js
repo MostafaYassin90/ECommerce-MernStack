@@ -39,7 +39,7 @@ const placeOrder = async (req, res) => {
   }
   catch (error) {
     console.log(error);
-    return res.status(500).json({ message: error.message, success: false });
+    return res.status(500).json({ message: error.message + "Order Controller error", success: false });
   }
 
 };

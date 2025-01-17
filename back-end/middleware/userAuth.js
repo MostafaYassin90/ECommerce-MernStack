@@ -15,10 +15,10 @@ const userAuth = async (req, res, next) => {
     next();
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ message: error.message, success: false });
+    return res.status(500).json({ message: `${error.message + "User Auth error"}`, success: false });
   }
 
 };
 
 
-export default userAuth;
+export default userAuth;;

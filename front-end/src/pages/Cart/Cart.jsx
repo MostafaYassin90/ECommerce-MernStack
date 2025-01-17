@@ -5,11 +5,15 @@ import Title from "../../components/Title/Title";
 import { assets } from "../../assets/assets";
 import CartTotal from "../../components/CartTotal/CartTotal";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Cart = () => {
 
   const { products, currency, delivery_fee, cartItems, updateQuantity } = useContext(ShopContect);
   const [cartData, setCartData] = useState([]);
+
+  const token = window.localStorage.getItem("Token");
+
 
   const navigate = useNavigate();
 
@@ -91,7 +95,14 @@ const Cart = () => {
         <CartTotal />
         <div className="text-right">
           <button className="mt-3 py-3 rounded px-5 bg-black text-white font-medium"
-            onClick={() => navigate("/place-order")}
+            onClick={() => {
+              if (token) {
+                navigate("/place-order");
+              } else {
+                toast.info("Please Login First.");
+                navigate("/login");
+              }
+            }}
           >Proceed To CheckOut</button>
         </div>
       </>

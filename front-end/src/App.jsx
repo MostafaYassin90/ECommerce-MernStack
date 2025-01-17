@@ -23,6 +23,10 @@ export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 function App() {
   return (
     <div className="app px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+      {/* DashBoard */}
+      <div className="fixed top-[100px] left-[0] text-center">
+        <a className="bg-slate-600 text-white py-2 px-3" href={import.meta.env.VITE_ADMINBANEL_URL} target="blank">Admin Panel</a>
+      </div>
       <ToastContainer position="top-right" theme="colored" />
       <Navbar />
       <SeachBar />
