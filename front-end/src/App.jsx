@@ -10,12 +10,15 @@ import Cart from "./pages/Cart/Cart";
 import Login from "./pages/Login/Login";
 import Navbar from "./components/Navbar.jsx/Navbar";
 import { ToastContainer } from "react-toastify";
-import "./App.css";
 import SeachBar from "./components/SeachBar/SeachBar";
 import Footer from "./components/Footer/Footer";
 import Register from "./pages/Register/Register";
 import Wishlist from "./pages/Wishlist/Wishlist";
 import Verify from "./pages/Verify/Verify";
+import "./App.css";
+
+export const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 
 function App() {
   return (

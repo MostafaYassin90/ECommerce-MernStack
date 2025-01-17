@@ -2,9 +2,9 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { z } from "zod";
 import axios from "axios";
+import { backendUrl } from '../../App';
 import "./Login.css";
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function Login(props) {
   const setToken = props.setToken;
@@ -27,7 +27,7 @@ function Login(props) {
         return;
       }
 
-      const response = await axios.post(backendUrl, { email, password });
+      const response = await axios.post(backendUrl + "/api/users/admin", { email, password });
       if (response.data.success === true) {
         setToken(response.data.token);
       }

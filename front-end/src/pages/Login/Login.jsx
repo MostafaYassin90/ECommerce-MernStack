@@ -4,6 +4,7 @@ import { z } from "zod";
 import { zodResolver } from './../../../node_modules/@hookform/resolvers/zod/src/zod';
 import { toast } from "react-toastify";
 import axios from "axios";
+import { backendUrl } from "../../App";
 
 const Login = () => {
 
@@ -28,7 +29,7 @@ const Login = () => {
       password: data.password
     };
     try {
-      const response = await axios.post("http://localhost:4000/api/users/login", userDetails);
+      const response = await axios.post(backendUrl + "/api/users/login", userDetails);
       const token = response.data.user.token;
       window.localStorage.setItem("Token", token);
       navigate("/");

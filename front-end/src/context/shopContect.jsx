@@ -1,6 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 import { toast } from 'react-toastify';
 import axios from "axios";
+import { backendUrl } from "../App";
+
 
 // Context
 export const ShopContect = createContext();
@@ -10,7 +12,7 @@ function ShopContectProvider(props) {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
-  const [cartItems, setCartItems] = useState({}); // http://localhost:4000/api/cart/get
+  const [cartItems, setCartItems] = useState({});
   const currency = "$";
   const delivery_fee = 10;
   const token = window.localStorage.getItem("Token");
@@ -18,7 +20,7 @@ function ShopContectProvider(props) {
   // Get All Products 
   const getAllProducts = async () => {
     try {
-      const response = await axios.get(import.meta.env.VITE_BACKEND_URL + "/api/products/list");
+      const response = await axios.get(backendUrl + "/api/products/list");
       if (response.data.success === true) {
         setProducts(response.data.productList);
       } else {
@@ -49,7 +51,7 @@ function ShopContectProvider(props) {
     setCartItems(cartData);
     if (token) {
       try {
-        await axios.post("http://localhost:4000/api/cart/add", { itemId, size }, {
+        await axios.post(backendUrl + "/api/cart/add", { itemId, size }, {
           headers: { authorization: "Bearer " + token }
         });
       } catch (error) {
@@ -67,7 +69,7 @@ function ShopContectProvider(props) {
     setCartItems(cartData);
     if (token) {
       try {
-        await axios.post("http://localhost:4000/api/cart/update", { itemId, size, quantity }, {
+        await axios.post(backendUrl + "/api/cart/update", { itemId, size, quantity }, {
           headers: { authorization: "Bearer " + token }
         });
       } catch (error) {
@@ -82,7 +84,7 @@ function ShopContectProvider(props) {
   // Get CartData
   const gettCartData = async () => {
     try {
-      const response = await axios.post("http://localhost:4000/api/cart/get", {}, {
+      const response = await axios.post(backendUrl + "/api/cart/get", {}, {
         headers: { authorization: "Bearer " + token }
       });
       if (response.data.success === true) {

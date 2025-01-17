@@ -6,8 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { ShopContect } from "../../context/shopContect";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import { backendUrl } from "../../App";
 import "./PlaceOrder.css";
+
 
 const PlaceOrder = () => {
 
@@ -77,7 +78,7 @@ const PlaceOrder = () => {
         break;
 
       case "stripe":
-        const responseSripe = await axios.post("http://localhost:4000/api/order/stripe", orderData,
+        const responseSripe = await axios.post(backendUrl + "/api/order/stripe", orderData,
           {
             headers: {
               authorization: "Bearer " + token,

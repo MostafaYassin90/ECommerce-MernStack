@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { ShopContect } from "../../context/shopContect";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { backendUrl } from "../../App";
 
 const Verify = () => {
   const { setCartItems } = useContext(ShopContect);
@@ -21,7 +22,7 @@ const Verify = () => {
         return null;
       }
 
-      const response = await axios.post("http://localhost:4000/api/order/verifyStripe", { success, orderId }, {
+      const response = await axios.post(backendUrl + "/api/order/verifyStripe", { success, orderId }, {
         headers: { authorization: "Bearer " + token }
       });
       if (response.data.success) {

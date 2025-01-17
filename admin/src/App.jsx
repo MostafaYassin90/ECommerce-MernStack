@@ -9,7 +9,6 @@ import { useEffect, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import Home from "./Pages/Home/Home";
 
-
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function App() {

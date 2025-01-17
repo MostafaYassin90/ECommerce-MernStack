@@ -1,15 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { ShopContect } from "../../context/shopContect";
 import Title from "../../components/Title/Title";
-import { useLocation } from "react-router-dom";
 import "./Orders.css";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { backendUrl } from "../../App";
 
 const Orders = () => {
-  const { currency, products, cartItems } = useContext(ShopContect);
+  const { currency } = useContext(ShopContect);
   const [orderData, setOrderData] = useState([]);
-  const [method, setMethod] = useState("");
 
   // Token
   const token = window.localStorage.getItem("Token");
@@ -38,7 +36,7 @@ const Orders = () => {
     // }
     // setCartProducts(cartData);
     try {
-      const response = await axios.post("http://localhost:4000/api/order/userorders", {}, {
+      const response = await axios.post(backendUrl + "/api/order/userorders", {}, {
         headers: { authorization: "Bearer " + token }
       });
       if (response.data.success) {
